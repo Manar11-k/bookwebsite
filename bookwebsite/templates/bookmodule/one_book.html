@@ -1,0 +1,25 @@
+{% extends "bookmodule/layout.html" %}
+{% load static %}
+
+{% block title %}Book Details{% endblock %}
+
+{% block content %}
+<a href="{% url 'books.list_books' %}">Go Back</a>
+
+<h1>Details of Book</h1>
+
+{% if book %}
+    <h2>{{ book.title }}</h2>
+    <h3>Author: {{ book.author }}</h3>
+
+    <p>
+        <strong>{{ book.title }}</strong> provides a clear, simple, engaging and entertaining introduction
+        to Internet and web programming. It's appropriate for both introductory and intermediate-level
+        client-side and server-side programming courses.
+    </p>
+
+    <img src="{% static 'book1.jpg' %}" alt="Book1 img desc" width="200" height="200">
+{% else %}
+    <p>No book found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "bookmodule/layout.html" %}
+{% load static %}
+
+{% block title %}List Books{% endblock %}
+
+{% block content %}
+<h1>List of Books</h1>
+
+<!-- الكتاب الأول -->
+<a href="{% url 'books.view_one_book' 123 %}">
+    <h2>Internet &amp; World Wide Web How to Program</h2>
+    <img src="{% static 'book1.jpg' %}" alt="Book1 img desc" width="200" height="200">
+</a>
+<hr>
+
+<!-- الكتاب الثاني -->
+<a href="{% url 'books.view_one_book' 456 %}">
+    <h2>C++ How to Program, Late Objects Version</h2>
+    <img src="{% static 'book2.jpg' %}" alt="Book2 img desc" width="200" height="200">
+</a>
+<hr>
+
+<!-- الكتاب الثالث -->
+<a href="{% url 'books.view_one_book' 789 %}">
+    <h2>Images in Another Folder</h2>
+    <img src="{% static 'book3.jpg' %}" alt="Book3 img desc" width="200" height="200">
+</a>
+<hr>
+{% endblock %}
